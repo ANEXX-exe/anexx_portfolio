@@ -936,80 +936,54 @@ footer {
     flex-direction: row-reverse;
 }
 
-/* ===== Mobile Layout New System ===== */
+
 @media (max-width: 768px) {
 
-    /* Navbar */
+    
     nav {
         padding: 10px 15px;
     }
 
-    .nav-center {
-        display: none;
+    
+    nav .logo img {
+        height: 35px;
     }
 
-    .logo img {
-        height: 38px;
-    }
-
-    /* Mobile menu full screen */
-    #navMenu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: var(--nav-bg);
+    
+    .nav-right {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        backdrop-filter: blur(15px);
-
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.3s;
+        gap: 8px;
     }
 
-    #navMenu.active {
-        opacity: 1;
-        pointer-events: auto;
+    .theme-toggle,
+    .lang-toggle {
+        padding: 6px 10px;
+        font-size: 14px;
     }
 
-    #navMenu li {
-        margin: 15px 0;
-    }
-
-    #navMenu li a {
-        font-size: 1.5rem;
-    }
-
-    /* Hero section */
+    
     .hero {
-        padding: 120px 20px;
-        text-align: center;
+        padding-top: 120px;
+        min-height: 90vh;
     }
 
+    
     .hero h1 {
         font-size: 2.2rem;
-        letter-spacing: 2px;
     }
 
     .hero p {
         font-size: 1rem;
     }
 
-    /* Buttons */
+    
     .btn {
-        width: 85%;
-        max-width: 280px;
-    }
-
-    /* Cards spacing */
-    section {
-        padding: 60px 20px;
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
+
 
 
 @keyframes fadeInDown {
