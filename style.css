@@ -938,37 +938,38 @@ footer {
 
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
 
-    
-    nav {
+    nav, #navbar {
         padding: 10px 15px;
     }
 
-    
     nav .logo img {
         height: 35px;
     }
 
-    
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    #navMenu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 15px 0;
     }
 
-    .theme-toggle,
-    .lang-toggle {
-        padding: 6px 10px;
-        font-size: 14px;
+    #navMenu li {
+        margin: 10px 0;
+        text-align: center;
     }
 
-    
     .hero {
-        padding-top: 120px;
-        min-height: 90vh;
+        padding: 120px 15px 60px;
+        text-align: center;
     }
 
-    
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -977,12 +978,42 @@ footer {
         font-size: 1rem;
     }
 
-    
     .btn {
-        padding: 10px 20px;
-        font-size: 14px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+
+    canvas {
+        display: none;
     }
 }
+
 
 
 
