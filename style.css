@@ -936,74 +936,81 @@ footer {
     flex-direction: row-reverse;
 }
 
+/* ===== Mobile Layout New System ===== */
 @media (max-width: 768px) {
-    .hero {
-    min-height: calc(100dvh - 70px);
-    padding-top: 0;
-}
-    
-    #navMenu {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 70px; 
-        left: 0;
-        width: 100%;
-        background: var(--nav-bg);
-        padding: 20px 0;
-        border-bottom: 1px solid var(--shadow);
-        backdrop-filter: blur(10px); 
-        box-shadow: 0 10px 20px var(--shadow);
-        z-index: 1000;
+
+    /* Navbar */
+    nav {
+        padding: 10px 15px;
     }
 
-    
-    #navMenu.active {
+    .nav-center {
+        display: none;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    /* Mobile menu full screen */
+    #navMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--nav-bg);
         display: flex;
-        animation: fadeInDown 0.3s ease forwards;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(15px);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    #navMenu.active {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     #navMenu li {
-        margin: 10px 0;
-        text-align: center;
-        list-style: none;
+        margin: 15px 0;
     }
 
     #navMenu li a {
-        display: block;
-        padding: 10px;
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
-    .nav-right {
-    gap: 0.5rem;
+
+    /* Hero section */
+    .hero {
+        padding: 120px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 85%;
+        max-width: 280px;
+    }
+
+    /* Cards spacing */
+    section {
+        padding: 60px 20px;
+    }
 }
 
-.theme-toggle,
-.lang-toggle {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
-    border-radius: 14px;
-}
-
-.theme-toggle span,
-.lang-toggle span {
-    font-size: 0.9rem;
-}
-.lang-toggle {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
-    min-width: auto;
-}
-
-.theme-toggle {
-    padding: 0.3rem 0.5rem;
-}
-
-.nav-right {
-    gap: 0.4rem;
-}
-
-}
 
 @keyframes fadeInDown {
     from {
