@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const loaderBar = document.getElementById("loader-bar");
+const loaderBar = document.getElementById("loader-bar"); 
 
 let loadProgress = 0;
 
