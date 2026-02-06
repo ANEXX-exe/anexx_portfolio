@@ -974,6 +974,22 @@ footer {
         padding: 10px;
         font-size: 1.1rem;
     }
+    .nav-right {
+    gap: 0.5rem;
+}
+
+.theme-toggle,
+.lang-toggle {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 14px;
+}
+
+.theme-toggle span,
+.lang-toggle span {
+    font-size: 0.9rem;
+}
+
 }
 
 @keyframes fadeInDown {
