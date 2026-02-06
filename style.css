@@ -955,18 +955,22 @@ footer {
         top: 60px;
         left: 0;
         width: 100%;
+        height: calc(100vh - 60px);
         background: var(--nav-bg);
         flex-direction: column;
-        padding: 15px 0;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        z-index: 1000;
     }
 
     #navMenu li {
-        margin: 10px 0;
+        margin: 18px 0;
         text-align: center;
     }
 
     .hero {
-        padding: 120px 15px 60px;
+        padding: 140px 15px 60px;
         text-align: center;
     }
 
@@ -1013,6 +1017,7 @@ footer {
         display: none;
     }
 }
+
 
 
 
