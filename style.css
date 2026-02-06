@@ -937,73 +937,59 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
+    .hero {
+        min-height: 100dvh;
+        padding-top: 80px;
     }
-
-    nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
+    /* تنسيق القائمة عند إغلاقها */
+    #navMenu {
+        display: none; /* مخفية افتراضياً */
         flex-direction: column;
-        padding: 1rem 0;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        box-shadow: 0 5px 10px var(--shadow);
+        position: absolute;
+        top: 70px; /* نفس ارتفاع الهيدر */
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        padding: 20px 0;
+        border-bottom: 1px solid var(--shadow);
+        backdrop-filter: blur(10px); /* تأثير زجاجي جميل */
+        box-shadow: 0 10px 20px var(--shadow);
+        z-index: 1000;
     }
 
-    nav ul.active {
-        max-height: 400px;
+    /* التنسيق الذي يظهر عند الضغط على الزر (بفضل كود JS الخاص بك) */
+    #navMenu.active {
+        display: flex;
+        animation: fadeInDown 0.3s ease forwards;
     }
 
-    nav ul li {
-        padding: 0.75rem 2rem;
+    #navMenu li {
+        margin: 10px 0;
+        text-align: center;
+        list-style: none;
     }
 
-    .hero h1 {
-        font-size: 3rem;
-        letter-spacing: 4px;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .skills {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .social-cards {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .social-card {
-        min-width: auto;
-    }
-
-    .social-features {
-        flex-direction: row;
-    }
-
-    .theme-toggle,
-    .lang-toggle {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+    #navMenu li a {
+        display: block;
+        padding: 10px;
+        font-size: 1.1rem;
     }
 }
+
+/* حركة دخول ناعمة للقائمة */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 @media (max-width: 480px) {
     .hero h1 {
@@ -1153,6 +1139,9 @@ body {
 .hero h1 {
     text-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
+
+
+
 
 
 
