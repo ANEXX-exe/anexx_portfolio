@@ -938,26 +938,26 @@ footer {
 
 @media (max-width: 768px) {
     .hero {
-        min-height: 100dvh;
-        padding-top: 80px;
-    }
-    /* تنسيق القائمة عند إغلاقها */
+    min-height: calc(100dvh - 70px);
+    padding-top: 0;
+}
+    
     #navMenu {
-        display: none; /* مخفية افتراضياً */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 70px; /* نفس ارتفاع الهيدر */
+        top: 70px; 
         left: 0;
         width: 100%;
         background: var(--nav-bg);
         padding: 20px 0;
         border-bottom: 1px solid var(--shadow);
-        backdrop-filter: blur(10px); /* تأثير زجاجي جميل */
+        backdrop-filter: blur(10px); 
         box-shadow: 0 10px 20px var(--shadow);
         z-index: 1000;
     }
 
-    /* التنسيق الذي يظهر عند الضغط على الزر (بفضل كود JS الخاص بك) */
+    
     #navMenu.active {
         display: flex;
         animation: fadeInDown 0.3s ease forwards;
@@ -976,7 +976,6 @@ footer {
     }
 }
 
-/* حركة دخول ناعمة للقائمة */
 @keyframes fadeInDown {
     from {
         opacity: 0;
