@@ -989,6 +989,19 @@ footer {
 .lang-toggle span {
     font-size: 0.9rem;
 }
+.lang-toggle {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: auto;
+}
+
+.theme-toggle {
+    padding: 0.3rem 0.5rem;
+}
+
+.nav-right {
+    gap: 0.4rem;
+}
 
 }
 
