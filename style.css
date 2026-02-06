@@ -945,76 +945,134 @@ footer {
     nav, #navbar {
         padding: 10px 15px;
     }
+    
+    nav .container {
+        padding: 0 1rem;
+    }
 
     nav .logo img {
         height: 35px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
     }
 
     #navMenu {
         position: fixed;
         top: 60px;
-        left: 0;
+        left: -100%;
         width: 100%;
         height: calc(100vh - 60px);
         background: var(--nav-bg);
+        backdrop-filter: blur(10px);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 0;
+        padding: 2rem 0;
         z-index: 1000;
+        transition: left 0.3s ease;
+    }
+    
+    #navMenu.active {
+        left: 0;
     }
 
     #navMenu li {
-        margin: 18px 0;
+        margin: 1.5rem 0;
         text-align: center;
+        width: 100%;
+    }
+    
+    #navMenu a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem;
+    }
+    
+    .nav-right {
+        gap: 0.5rem;
+    }
+    
+    .theme-toggle,
+    .lang-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
     }
 
     .hero {
         padding: 140px 15px 60px;
         text-align: center;
+        min-height: 100vh;
     }
 
     .hero h1 {
         font-size: 2.2rem;
+        letter-spacing: 4px;
     }
 
     .hero p {
         font-size: 1rem;
+        letter-spacing: 1px;
     }
 
     .btn {
-        width: 100%;
-        margin: 5px 0;
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .skills {
+        grid-template-columns: 1fr;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 1.5rem;
     }
 
     .project-card {
         width: 100%;
     }
-
-    .skills-grid {
+    
+    .social-cards {
         grid-template-columns: 1fr;
-    }
-
-    .social-grid {
-        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     section {
-        padding: 60px 15px;
+        padding: 4rem 1.5rem;
+    }
+    
+    .scroll-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
     }
 
     .cursor-dot,
     .cursor-outline {
-        display: none;
+        display: none !important;
     }
 
     canvas {
-        display: none;
+        display: none !important;
+    }
+    
+    body {
+        cursor: auto !important;
     }
 }
 
@@ -1038,15 +1096,30 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
     }
 
-    nav .logo {
-        font-size: 1.5rem;
+    nav .logo img {
+        height: 30px;
+    }
+    
+    .nav-right {
+        gap: 0.3rem;
+    }
+    
+    .theme-toggle,
+    .lang-toggle {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .social-logo {
@@ -1064,6 +1137,55 @@ footer {
     
     .card-content p {
         font-size: 0.85rem;
+    }
+    
+    .social-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .social-features {
+        gap: 0.8rem;
+    }
+    
+    .feature-icon {
+        font-size: 1.3rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 0.9rem;
+    }
+    
+    section {
+        padding: 3rem 1rem;
+    }
+}
+
+/* تنسيقات للشاشات المتوسطة */
+@media (min-width: 481px) and (max-width: 768px) {
+    .social-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* تنسيقات للأجهزة اللوحية */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .social-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
     }
 }
 #loader-bar {
@@ -1184,14 +1306,3 @@ body {
 .hero h1 {
     text-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
-
-
-
-
-
-
-
-
-
-
-
